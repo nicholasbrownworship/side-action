@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Side Action — golf games for the group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <h1>Side Action</h1>
+  <nav aria-label="Sections">
+    <button class="tab is-on" data-tab="pick">Pick a game</button>
+    <button class="tab" data-tab="card">Scorecard</button>
+    <button class="tab" data-tab="yards">My yardages</button>
+  </nav>
+</header>
+
+<main>
+  <section id="pick" class="panel">
+    <p class="hero">
+      <span class="hero-line">What are we playing?</span>
+      <span class="hero-sentence">There are
+        <select id="pCount" aria-label="Number of players">
+          <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option><option>8</option>
+        </select>
+        of us, and the mood is
+        <select id="pVibe" aria-label="Mood">
+          <option value="any">anything</option>
+          <option value="chill">chill</option>
+          <option value="competitive">competitive</option>
+          <option value="chaos">chaotic</option>
+        </select>.
+      </span>
+    </p>
+    <p id="pickCount" class="muted" aria-live="polite"></p>
+    <div id="games"></div>
+  </section>
+
+  <section id="card" class="panel" hidden>
+    <div class="bar">
+      <label>Format
+        <select id="fmt">
+          <option value="stroke">Stroke play</option>
+          <option value="stable">Stableford</option>
+          <option value="skins">Skins</option>
+        </select>
+      </label>
+      <label>Holes
+        <select id="holes"><option value="9">9</option><option value="18" selected>18</option></select>
+      </label>
+      <button id="addP">Add player</button>
+      <button id="rmP">Remove last player</button>
+      <button id="resetRound" class="danger">Clear round</button>
+    </div>
+    <div class="scroll"><table id="grid"></table></div>
+    <div id="summary"></div>
+    <p class="muted">Saved on this device only. Pars are editable: tap a par to change it.</p>
+  </section>
+
+  <section id="yards" class="panel" hidden>
+    <h2>My yardages</h2>
+    <p class="muted">Enter your own numbers. The gap column shows the carry difference to the next club down the list.</p>
+    <div class="scroll"><table id="clubs"></table></div>
+    <div class="bar"><button id="addClub">Add club</button></div>
+    <p class="muted">Saved on this device only.</p>
+  </section>
+</main>
+
+<script src="games.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

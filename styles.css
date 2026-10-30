@@ -1,0 +1,61 @@
+:root{
+  --paper:#E8EDEE; --card:#F6F8F8; --ink:#13222C; --muted:#4F6270; --line:#B7C3C7;
+  --green:#2C7A4B; --green-dark:#1B4D32; --flag:#C8382C; --sand:#C8AE72;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#10191F; --card:#18252D; --ink:#E6EEF0; --muted:#9DB0BA; --line:#2C3C46; --green:#58B97C; --green-dark:#3E9A62; --flag:#EF6A5E; --sand:#C8AE72; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body);padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 2rem;padding:1.2rem clamp(1rem,4vw,3rem) .8rem;border-bottom:3px solid var(--green)}
+h1{font:800 1.6rem/1 var(--head);margin:0;letter-spacing:-.01em}
+h2{font:800 1.6rem/1.1 var(--head);margin:0 0 .4rem}
+nav{display:flex;gap:.25rem;flex-wrap:wrap}
+.tab{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-.85rem;padding:.4rem .8rem .75rem;font:600 1rem var(--body);color:var(--muted);cursor:pointer}
+.tab.is-on{color:var(--ink);border-bottom-color:var(--flag)}
+main{max-width:56rem;margin:0 auto;padding:1.5rem clamp(1rem,4vw,2rem) 4rem}
+[hidden]{display:none!important}
+.hero{margin:1rem 0 .5rem}
+.hero-line{display:block;font:800 clamp(2.4rem,9vw,4.6rem)/.98 var(--head);letter-spacing:-.03em}
+.hero-sentence{display:block;margin-top:1rem;font-size:1.25rem}
+select,input,button{font:inherit;color:inherit}
+select{background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:.15rem .4rem}
+.muted{color:var(--muted);font-size:.92rem}
+.game{background:var(--card);border-left:6px solid var(--green);margin:.7rem 0;padding:.2rem 1rem}
+.game summary{cursor:pointer;padding:.7rem 0;list-style:none;display:flex;flex-wrap:wrap;gap:.1rem 1rem;align-items:baseline}
+.game summary::-webkit-details-marker{display:none}
+.game[open]{border-left-color:var(--flag)}
+.gname{font:800 1.35rem var(--head)}
+.gpitch{color:var(--muted)}
+.game ol{margin:.2rem 0 .6rem;padding-left:1.3rem;max-width:46rem}
+.game li{margin:.3rem 0}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:end;margin-bottom:1rem}
+.bar label{display:flex;flex-direction:column;font-size:.85rem;color:var(--muted);gap:.15rem}
+button{background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:.4rem .8rem;cursor:pointer;font-weight:600}
+button:hover{background:var(--ink);color:var(--paper)}
+button.danger{border-color:var(--flag);color:var(--flag)}
+button.danger:hover{background:var(--flag);color:#fff}
+.scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:30rem}
+th,td{border-bottom:1px solid var(--line);padding:.25rem .4rem;text-align:center}
+thead th{border-bottom:2px solid var(--ink)}
+tbody th{font-weight:600;color:var(--muted);width:3.5rem}
+table input{width:100%;min-width:3.2rem;background:transparent;border:1px solid transparent;border-radius:4px;padding:.3rem;text-align:center}
+table input:hover{border-color:var(--line)}
+td input.par{color:var(--muted)}
+input.pname,input.cn{font-weight:700}
+#clubs input.cn{text-align:left}
+.gap{color:var(--green);font-weight:600}
+.x{border-width:1px;padding:.2rem .5rem;font-size:.85rem}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.7rem;margin:1.2rem 0 .4rem}
+.result{background:var(--card);border-top:6px solid var(--sand);padding:.7rem 1rem;display:flex;flex-direction:column}
+.rn{font-weight:700}
+.rbig{font:800 2.2rem/1.1 var(--head)}
+.rsmall{color:var(--muted);font-size:.9rem}
+.log{margin:.5rem 0}
+.log summary{cursor:pointer}
+:focus-visible{outline:3px solid var(--flag);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
